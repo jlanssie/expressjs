@@ -1,9 +1,12 @@
 {
-  "name": "my-docker-container",
+  "name": "ExpressJS",
   "version": "1.0.0",
-  "description": "A sample ExpressJS app in a Docker container.",
+  "description": "A sample ExpressJS app and a utility script to make mock requests.",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "app" : "node app",
+    "mockClient" : "node mockClient"
+  },
   "author": "Jeremy Lanssiers",
   "license": "ISC",
   "dependencies": {

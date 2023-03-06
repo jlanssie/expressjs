@@ -1,14 +1,11 @@
 const endpoint = "http://localhost:3000";
 
-const query = "?input=" + Math.random().toString(36).substr(2, 7);
+
+const getRequest = () => {
+
+  const query = "?input=" + Math.random().toString(36).substr(2, 7);
 
 const queryRequest = endpoint + query;
-
-const payload = {
-  context: "docker-container",
-  id: Date.now(),
-  data: Math.random().toString(36).substr(2, 7),
-};
 
 fetch(queryRequest, {
   method: "GET",
@@ -26,6 +23,18 @@ fetch(queryRequest, {
     console.error("Error:", error);
   });
 
+}
+
+const postRequest = () => {
+
+  const payload = {
+  context: "docker-container",
+  id: Date.now(),
+  data: Math.random().toString(36).substr(2, 7),
+};
+
+
+
 fetch(endpoint, {
   method: "POST",
   headers: {
@@ -42,3 +51,13 @@ fetch(endpoint, {
   .catch((error) => {
     console.error("Error:", error);
   });
+
+
+}
+
+setInterval(getRequest, 5000)
+
+setInterval(postRequest, 5000)
+
+
+
